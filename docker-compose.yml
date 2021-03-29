@@ -35,7 +35,7 @@ services:
       ports:
         - 5432:5432
       volumes:
-        - ./data/postgres:/var/lib/postgres
+        - ./docker/postgres/data/:/var/lib/postgres
       environment:
         - POSTGRES_PASSWORD=${DB_PASS:-postpasswd}
         - POSTGRES_USER=${DB_USER:-larapost}
