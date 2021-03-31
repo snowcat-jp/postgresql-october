@@ -17,6 +17,7 @@ services:
         - DB_DATABASE=${DB_NAME:-laravel_local}
         - DB_USERNAME=${DB_USER:-larapost}
         - DB_PASSWORD=${DB_PASS:-postpasswd}
+        - CMS_LINK_POLICY=secure
 
     web:
       build:
@@ -27,6 +28,8 @@ services:
       volumes:
         - php-fpm-socket:/var/run/php-fpm
         - ./src:/work/src
+        - ./src/themes:/work/src/public/themes
+        - ./src/modules:/work/src/public/modules
 
     postgres:
       build:
