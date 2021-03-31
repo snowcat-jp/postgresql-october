@@ -30,6 +30,7 @@ services:
         - ./src:/work/src
         - ./src/themes:/work/src/public/themes
         - ./src/modules:/work/src/public/modules
+        - ./src/plugins:/work/src/public/plugins
 
     postgres:
       build:
